@@ -1,0 +1,127 @@
+﻿@model ClientWebApp_OpusXenta_Test_ChamaraD.Models.CompanyViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+
+<div>
+    <h4>Company Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CompanyName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LogoPath)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LogoPath)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Website)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Website)
+        </dd>
+
+    </dl>
+</div>
+
+
+<br/>
+
+
+<hr/>
+
+
+
+<h4>Employee Details</h4>
+
+
+<div>
+
+    <table class="table">
+        <tr>
+
+            <th>
+                Employee ID
+            </th>
+            <th>
+                Employee First Name
+            </th>
+            <th>
+                Employee Last Name
+            </th>
+            <th>
+                Contact No.
+            </th>
+            <th>
+                Skills
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model.EmployeeList)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.EmployeeID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.Skills)
+                </td>
+
+
+
+
+                <td>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+
+</div>
+
+<p>
+
+    @Html.ActionLink("Back to List", "Index")
+</p>
+

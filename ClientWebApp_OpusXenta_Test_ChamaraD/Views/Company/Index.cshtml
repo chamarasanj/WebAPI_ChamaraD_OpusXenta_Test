@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ClientWebApp_OpusXenta_Test_ChamaraD.Models.CompanyViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Company List</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+       
+        <th>
+            @Html.DisplayNameFor(model => model.CompanyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LogoPath)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Website)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.CompanyName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LogoPath)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Website)
+            </td>
+            <td>
+
+                <a href="@Url.Action("Edit","Company",new {id=item.CompanyID})" class="btn btn-default"> <i class="fa fa-pencil"></i> Edit</a> 
+           
+                <a href="@Url.Action("Details","Company",new {id=item.CompanyID})" class="btn btn-default"> <i class="fas fa-info-circle"></i>Company Details - Employee List</a>
+
+                <a onclick="Delete(@item.CompanyID)" class="btn btn-default">  <i class="fa fa-trash"></i>Delete</a>
+
+
+            </td>
+        </tr>
+    }
+
+</table>
+
+
+@section scripts
+    {
+    <script>
+
+            $(function ()
+            {
+                var successMessage = '@TempData["SuccessMessage"]'
+
+                if (successMessage != '')
+                {
+                    alertify.success(successMessage);
+                }
+            });
+
+            function Delete(id)
+            {
+                alertify.confirm('OpusXentaTest_ChamaraD', 'Confirm Delete ???', function ()
+                {
+                 
+                    window.location.href = '@Url.Action("Delete","Company")/' + id;
+
+                }, null);
+            }
+
+    </script>
+}
+

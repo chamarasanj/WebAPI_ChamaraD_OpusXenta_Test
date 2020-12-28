@@ -1,0 +1,50 @@
+﻿@model ClientWebApp_OpusXenta_Test_ChamaraD.Models.SecurityProfile_UserViewModel
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SecurityProfile_UserViewModel</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.SecurityProfileID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityProfileID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.SecurityProfileName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SecurityProfileName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserID)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserID)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.UserName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.UserName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+  
+    @Html.ActionLink("Back to List", "Index")
+</p>

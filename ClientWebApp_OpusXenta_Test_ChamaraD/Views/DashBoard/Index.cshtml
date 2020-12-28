@@ -1,0 +1,100 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Dashboard</h2>
+
+
+
+
+
+<a href="@Url.Action("Index","Company")" class="btn btn-default">
+
+
+    <img src="~/SystemImages/companyImage.png" />
+    <h4>
+        Manage Company
+    </h4>
+ 
+</a>
+
+<a href="@Url.Action("Index","Employee")" class="btn btn-default"> 
+    <img src="~/SystemImages/employeeIcon.png" />
+   
+    <h4>
+        Manage Employee
+    </h4>
+   
+
+</a>
+
+<a href="@Url.Action("Index","User")" class="btn btn-default">
+
+    <img src="~/SystemImages/userIcon.jpg" />
+
+    <h4>
+        Manage User
+    </h4>
+  
+</a>
+
+
+<a href="@Url.Action("Index","SecurityProfile")" class="btn btn-default">
+    <img src="~/SystemImages/securityIcon.png" />
+    <h4>
+        Security Profile
+    </h4>
+</a>
+
+<a href="@Url.Action("Index","AssignUserToSecurityProfile")" class="btn btn-default">
+
+    <img src="~/SystemImages/assignSec.jpg" />
+    <h4>
+        Assign Seurity Profile to User
+    </h4>
+</a>
+
+<a href="@Url.Action("Index","Login")" class="btn btn-default">
+
+
+    <img src="~/SystemImages/loginicon.jpg" />
+    <h4>
+        Login
+    </h4>
+</a>
+
+
+
+
+<br/>
+<hr />
+
+
+
+
+<script type="text/javascript">
+    function display_c() {
+        var refresh = 1000; // Refresh rate in milli seconds
+        mytime = setTimeout('display_ct()', refresh)
+    }
+
+
+
+    function display_ct() {
+        var x = new Date()
+        document.getElementById('ct').innerHTML = x;
+        display_c();
+    }
+
+
+</script>
+
+<body onload=display_ct();>
+
+    <h2>
+        <span id='ct'></span>
+    </h2>
+  
+
+</body>
